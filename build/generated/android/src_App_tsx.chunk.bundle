@@ -1,0 +1,63 @@
+(self["webpackChunknews"] = self["webpackChunknews"] || []).push([["src_App_tsx"],{
+
+/***/ "./src/App.tsx":
+/*!*********************!*\
+  !*** ./src/App.tsx ***!
+  \*********************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+var _interopRequireDefault=__webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");Object.defineProperty(exports, "__esModule", ({value:true}));exports["default"]=void 0;var _react=_interopRequireDefault(__webpack_require__(/*! react */ "webpack/sharing/consume/default/react/react"));var _native=__webpack_require__(/*! @react-navigation/native */ "webpack/sharing/consume/default/@react-navigation/native/@react-navigation/native");var _MainNavigator=_interopRequireDefault(__webpack_require__(/*! ./navigation/MainNavigator */ "./src/navigation/MainNavigator.tsx"));var _jsxRuntime=__webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");var _this=this,_jsxFileName="/Users/andrewworld/Projects/Callstack/news-mini-app-template/src/App.tsx";var App=function App(){return(0,_jsxRuntime.jsx)(_native.NavigationContainer,{independent:true,children:(0,_jsxRuntime.jsx)(_MainNavigator.default,{})});};var _default=App;exports["default"]=_default;
+
+/***/ }),
+
+/***/ "./src/navigation/MainNavigator.tsx":
+/*!******************************************!*\
+  !*** ./src/navigation/MainNavigator.tsx ***!
+  \******************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+var _interopRequireDefault=__webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");Object.defineProperty(exports, "__esModule", ({value:true}));exports["default"]=void 0;var _react=_interopRequireDefault(__webpack_require__(/*! react */ "webpack/sharing/consume/default/react/react"));var _nativeStack=__webpack_require__(/*! @react-navigation/native-stack */ "webpack/sharing/consume/default/@react-navigation/native-stack/@react-navigation/native-stack");var _TabsNavigator=_interopRequireDefault(__webpack_require__(/*! ./TabsNavigator */ "./src/navigation/TabsNavigator.tsx"));var _jsxRuntime=__webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");var _this=this,_jsxFileName="/Users/andrewworld/Projects/Callstack/news-mini-app-template/src/navigation/MainNavigator.tsx";var Main=(0,_nativeStack.createNativeStackNavigator)();var MainNavigator=function MainNavigator(){return(0,_jsxRuntime.jsx)(Main.Navigator,{screenOptions:{headerShown:false},children:(0,_jsxRuntime.jsx)(Main.Screen,{name:"Tabs",component:_TabsNavigator.default})});};var _default=MainNavigator;exports["default"]=_default;
+
+/***/ }),
+
+/***/ "./src/navigation/TabsNavigator.tsx":
+/*!******************************************!*\
+  !*** ./src/navigation/TabsNavigator.tsx ***!
+  \******************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+var _interopRequireDefault=__webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");Object.defineProperty(exports, "__esModule", ({value:true}));exports["default"]=void 0;var _react=_interopRequireDefault(__webpack_require__(/*! react */ "webpack/sharing/consume/default/react/react"));var _HomeScreen=_interopRequireDefault(__webpack_require__(/*! ../screens/HomeScreen */ "./src/screens/HomeScreen.tsx"));var _SearchScreen=_interopRequireDefault(__webpack_require__(/*! ../screens/SearchScreen */ "./src/screens/SearchScreen.tsx"));var _AccountScreen=_interopRequireDefault(__webpack_require__(/*! ../screens/AccountScreen */ "./src/screens/AccountScreen.tsx"));var _materialBottomTabs=__webpack_require__(/*! @react-navigation/material-bottom-tabs */ "webpack/sharing/consume/default/@react-navigation/material-bottom-tabs/@react-navigation/material-bottom-tabs");var _jsxRuntime=__webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");var _this=this,_jsxFileName="/Users/andrewworld/Projects/Callstack/news-mini-app-template/src/navigation/TabsNavigator.tsx";var Tabs=(0,_materialBottomTabs.createMaterialBottomTabNavigator)();var TabsNavigator=function TabsNavigator(){return(0,_jsxRuntime.jsxs)(Tabs.Navigator,{children:[(0,_jsxRuntime.jsx)(Tabs.Screen,{name:"Home",component:_HomeScreen.default,options:{tabBarIcon:'home'}}),(0,_jsxRuntime.jsx)(Tabs.Screen,{name:"Search",component:_SearchScreen.default,options:{tabBarIcon:'magnify'}}),(0,_jsxRuntime.jsx)(Tabs.Screen,{name:"Account",component:_AccountScreen.default,options:{tabBarIcon:'account'}})]});};var _default=TabsNavigator;exports["default"]=_default;
+
+/***/ }),
+
+/***/ "./src/screens/AccountScreen.tsx":
+/*!***************************************!*\
+  !*** ./src/screens/AccountScreen.tsx ***!
+  \***************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+var _interopRequireDefault=__webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");Object.defineProperty(exports, "__esModule", ({value:true}));exports["default"]=void 0;var _react=_interopRequireDefault(__webpack_require__(/*! react */ "webpack/sharing/consume/default/react/react"));var _reactNative=__webpack_require__(/*! react-native */ "webpack/sharing/consume/default/react-native/react-native");var _jsxRuntime=__webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");var _this=this,_jsxFileName="/Users/andrewworld/Projects/Callstack/news-mini-app-template/src/screens/AccountScreen.tsx";var AccountScreen=function AccountScreen(){return(0,_jsxRuntime.jsx)(_reactNative.View,{style:styles.container});};var styles=_reactNative.StyleSheet.create({container:{flex:1}});var _default=AccountScreen;exports["default"]=_default;
+
+/***/ }),
+
+/***/ "./src/screens/HomeScreen.tsx":
+/*!************************************!*\
+  !*** ./src/screens/HomeScreen.tsx ***!
+  \************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+var _interopRequireDefault=__webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");Object.defineProperty(exports, "__esModule", ({value:true}));exports["default"]=void 0;var _react=_interopRequireDefault(__webpack_require__(/*! react */ "webpack/sharing/consume/default/react/react"));var _reactNative=__webpack_require__(/*! react-native */ "webpack/sharing/consume/default/react-native/react-native");var _jsxRuntime=__webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");var _this=this,_jsxFileName="/Users/andrewworld/Projects/Callstack/news-mini-app-template/src/screens/HomeScreen.tsx";var HomeScreen=function HomeScreen(){return(0,_jsxRuntime.jsx)(_reactNative.View,{style:styles.container});};var styles=_reactNative.StyleSheet.create({container:{flex:1}});var _default=HomeScreen;exports["default"]=_default;
+
+/***/ }),
+
+/***/ "./src/screens/SearchScreen.tsx":
+/*!**************************************!*\
+  !*** ./src/screens/SearchScreen.tsx ***!
+  \**************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+var _interopRequireDefault=__webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");Object.defineProperty(exports, "__esModule", ({value:true}));exports["default"]=void 0;var _react=_interopRequireDefault(__webpack_require__(/*! react */ "webpack/sharing/consume/default/react/react"));var _reactNative=__webpack_require__(/*! react-native */ "webpack/sharing/consume/default/react-native/react-native");var _jsxRuntime=__webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");var _this=this,_jsxFileName="/Users/andrewworld/Projects/Callstack/news-mini-app-template/src/screens/SearchScreen.tsx";var SearchScreen=function SearchScreen(){return(0,_jsxRuntime.jsx)(_reactNative.View,{style:styles.container});};var styles=_reactNative.StyleSheet.create({container:{flex:1}});var _default=SearchScreen;exports["default"]=_default;
+
+/***/ })
+
+}]);//# sourceMappingURL=src_App_tsx.chunk.bundle.map?platform=android
