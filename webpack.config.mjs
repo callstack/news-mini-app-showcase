@@ -235,7 +235,7 @@ export default env => {
       new Repack.plugins.ModuleFederationPlugin({
         name: 'news',
         exposes: {
-          './App': './App',
+          './App': './src/App',
         },
         shared: {
           react: {
@@ -247,6 +247,21 @@ export default env => {
             ...Repack.Federated.SHARED_REACT_NATIVE,
             requiredVersion: '0.70.5',
             eager: STANDALONE,
+          },
+          '@react-navigation/native': {
+            singleton: true,
+            eager: STANDALONE,
+            requiredVersion: '6.0.13',
+          },
+          '@react-navigation/native-stack': {
+            singleton: true,
+            eager: STANDALONE,
+            requiredVersion: '6.9.1',
+          },
+          '@react-navigation/material-bottom-tabs': {
+            singleton: true,
+            eager: STANDALONE,
+            requiredVersion: '6.2.4',
           },
         },
       }),
