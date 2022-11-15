@@ -209,6 +209,22 @@ export default env => {
             },
           },
         },
+        {
+          test: /\.tsx?$/,
+          exclude: /node_modules/,
+          use: [
+            {
+              loader: 'dts-loader',
+              options: {
+                name: 'news',
+                exposes: {
+                  './App': './src/App',
+                },
+                typesOutputDir: '.types', // Optional, default is '.wp_federation'
+              },
+            },
+          ],
+        },
       ],
     },
     plugins: [

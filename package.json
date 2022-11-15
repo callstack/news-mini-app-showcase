@@ -10,12 +10,16 @@
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "bootstrap:pods": "cd ios && pod install",
-    "bootstrap": "yarn && yarn bootstrap:pods"
+    "bootstrap": "yarn && yarn bootstrap:pods",
+    "bundle:ios": "react-native webpack-bundle --platform ios --dev false --entry-file index.js",
+    "bundle:android": "react-native webpack-bundle --platform android --dev false --entry-file index.js",
+    "tar": "tar czvf ./.types/news-dts.tgz -C ./.types/ news"
   },
   "dependencies": {
     "@react-navigation/material-bottom-tabs": "^6.2.4",
     "@react-navigation/native": "^6.0.13",
     "@react-navigation/native-stack": "^6.9.1",
+    "dts-loader": "^0.1.8",
     "react": "18.1.0",
     "react-native": "0.70.5",
     "react-native-paper": "5.0.0-rc.9",
