@@ -10,7 +10,9 @@
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "bootstrap:pods": "cd ios && pod install",
-    "bootstrap": "yarn && yarn bootstrap:pods"
+    "bootstrap": "yarn && yarn bootstrap:pods",
+    "bundle:ios": "react-native webpack-bundle --platform ios --entry-file index.js",
+    "bundle:android": "react-native webpack-bundle --platform android --entry-file index.js"
   },
   "dependencies": {
     "@react-navigation/material-bottom-tabs": "^6.2.4",
