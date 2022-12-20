@@ -21,7 +21,7 @@ Start dev server if you need to work as a part of host app. News app server will
 ```
 yarn start
 ```
-Or start dev server for News appliappcation as a standalone app. It will run News app server will run on 8081 port:
+Or start dev server for News app as a standalone app. It will run News app server will run on 8081 port:
 ```
 yarn start:standalone
 ```
