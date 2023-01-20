@@ -58,3 +58,11 @@ yarn-error.log
 # Ruby / CocoaPods
 /ios/Pods/
 /vendor/bundle/
+
+# yalc
+.yalc
+yalc.lock
+
+# certificates
+code-signing.pem
+code-signing.pem.pub
