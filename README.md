@@ -1,8 +1,8 @@
-# news-mini-app-template
+# News mini-app showcase
 
-This is mini app for reading news and articles. News exposes `MainNavigator`. `MainNavigator` is News app itself. News app uses auth logic and UI (`SignInScreen`, `AccountScreen`) from Auth remote module, so we suggest to run Auth dev server to prevent issues with News app. If Auth dev server will no be run, News app will not work as standalone app.
+This is mini app for reading news and articles. It's a part of [Super App Showcase](https://github.com/callstack/super-app-showcase), demonstrating compatibility of an independent repository with a super app powered by Module Federation. 
 
-Auth Module is a part of [Super App Template](https://github.com/callstack-internal/super-app-template) monorepo. You can find more information about Super App Template in [Super App Template README](https://github.com/callstack-internal/super-app-template/blob/main/README.md) file.
+News exposes `MainNavigator`. `MainNavigator` is News app itself. News app uses auth logic and UI (`SignInScreen`, `AccountScreen`) from Auth remote module, so we suggest to run Auth dev server to prevent issues with News app. If Auth dev server will no be run, News app will not work as standalone app.
 
 ## Getting started
 
