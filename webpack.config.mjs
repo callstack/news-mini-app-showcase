@@ -240,12 +240,12 @@ export default env => {
         shared: {
           react: {
             ...Repack.Federated.SHARED_REACT,
-            requiredVersion: '18.1.0',
+            requiredVersion: '18.2.0',
             eager: STANDALONE,
           },
           'react-native': {
             ...Repack.Federated.SHARED_REACT_NATIVE,
-            requiredVersion: '0.70.5',
+            requiredVersion: '0.71.8',
             eager: STANDALONE,
           },
           '@react-navigation/native': {
