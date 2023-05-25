@@ -25,8 +25,19 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Build
-        run: yarn node scripts/build-miniapp.js ${{ github.ref_name }}
+      - name: Create code-signing.pem
+        run: echo "${{ secrets.CODE_SIGNING_KEY }}" > code-signing.pem
+
+      - name: Run Android bundle script
+        if: contains(github.ref, 'news-android@')
+        run: yarn bundle:android
+
+      - name: Run iOS bundle script
+        if: contains(github.ref, 'news-ios@')
+        run: yarn bundle:ios
+
+      - name: Delete code-signing.pem
+        run: rm code-signing.pem
 
       - name: Release
         uses: ncipollo/release-action@v1
