@@ -22,7 +22,7 @@ export default env => {
   return {
     mode,
     context: __dirname,
-    entry: {},
+    entry: './index.js',
     experiments: {
       incremental: mode === 'development',
     },
@@ -45,7 +45,7 @@ export default env => {
         filename: 'news.container.js.bundle',
         dts: false,
         exposes: {
-          './App': './src/navigation/MainNavigator'
+          './App': './src/navigation/MainNavigator',
         },
         shared: getSharedDependencies({eager: false}),
       }),
