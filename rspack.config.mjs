@@ -47,7 +47,7 @@ export default env => {
         exposes: {
           './App': './src/navigation/MainNavigator',
         },
-        shared: getSharedDependencies({eager: false}),
+        shared: getSharedDependencies({eager: STANDALONE}),
       }),
       new Repack.plugins.CodeSigningPlugin({
         enabled: mode === 'production',
