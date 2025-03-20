@@ -10,7 +10,7 @@
   "scripts": {
     "android": "react-native run-android --no-packager",
     "ios": "react-native run-ios --no-packager",
-    "start": "react-native start --port 9001",
+    "start": "react-native start --port 9004",
     "start:standalone": "STANDALONE=1 react-native start --port 8081",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
