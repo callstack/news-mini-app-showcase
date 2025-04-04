@@ -14,12 +14,11 @@
     "start:standalone": "STANDALONE=1 react-native start --port 8081",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "bootstrap:pods": "(cd ios && bundle install && bundle exec pod install)",
-    "bootstrap": "pnpm install && pnpm bootstrap:pods",
+    "pods": "(cd ios && bundle install && bundle exec pod install)",
     "pods:update": "(cd ios && bundle exec pod update)",
+    "bundle": "pnpm bundle:ios && pnpm bundle:android",
     "bundle:ios": "react-native bundle --platform ios --entry-file index.js",
-    "bundle:android": "react-native bundle --platform android --entry-file index.js",
-    "bundle": "pnpm bundle:ios && pnpm bundle:android"
+    "bundle:android": "react-native bundle --platform android --entry-file index.js"
   },
   "dependencies": {
     "@module-federation/enhanced": "0.7.1",
