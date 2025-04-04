@@ -28,7 +28,9 @@ const showNotImplementedAlert = () => Alert.alert('Not implemented yet');
 
 const HomeScreen = () => {
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView
+      contentInsetAdjustmentBehavior="automatic"
+      style={styles.container}>
       <View style={styles.header}>
         <Text variant="titleLarge" style={styles.headerTitle}>
           Trending

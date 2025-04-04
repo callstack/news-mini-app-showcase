@@ -24,6 +24,9 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
+pod 'SDWebImage', :modular_headers => true
+pod 'SDWebImageSVGCoder', :modular_headers => true
+
 target 'news' do
   config = use_native_modules!
 
