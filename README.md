@@ -13,7 +13,7 @@ To run News app without changing or removing auth logic you need to run Auth dev
 Install dependencies:
 
 ```
-pnpm bootstrap
+pnpm install
 ```
 
 ### Run
