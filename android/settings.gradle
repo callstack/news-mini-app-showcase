@@ -1,4 +1,17 @@
+pluginManagement {
+    apply from: "./resolveNodePackage.gradle"
+    // resolve react-native-gradle-plugin & CLI dynamically
+    def reactNativePath = resolveNodePackage('react-native', rootDir)
+    def gradlePluginPath = resolveNodePackage('@react-native/gradle-plugin', reactNativePath)
+    // expose gradlePluginPath outside of pluginManagement block
+    settings.ext.gradlePluginPath = gradlePluginPath.path
+    includeBuild(gradlePluginPath.path)
+}
+
+plugins { id("com.facebook.react.settings") }
+extensions.configure(com.facebook.react.ReactSettingsExtension) { ex -> ex.autolinkLibrariesFromCommand() }
+
 rootProject.name = 'news'
-apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+
 include ':app'
-includeBuild('../node_modules/react-native-gradle-plugin')
+includeBuild(ext.gradlePluginPath)
