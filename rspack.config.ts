@@ -7,8 +7,6 @@ import getSharedDependencies from './sharedDeps.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const STANDALONE = Boolean(process.env.STANDALONE);
-
 /**
  * Rspack configuration enhanced with Re.Pack defaults for React Native.
  *
@@ -16,25 +14,28 @@ const STANDALONE = Boolean(process.env.STANDALONE);
  * Learn about Re.Pack configuration: https://re-pack.dev/docs/guides/configuration
  */
 
-export default env => {
-  const {mode, devServer, platform} = env;
+const STANDALONE = Boolean(process.env.STANDALONE);
 
+export default Repack.defineRspackConfig(({mode}) => {
   return {
     mode,
     context: __dirname,
     entry: './index.js',
-    experiments: {
-      incremental: mode === 'development',
-    },
-    resolve: {
-      ...Repack.getResolveOptions(),
-    },
+    resolve: {...Repack.getResolveOptions({enablePackageExports: true})},
     output: {
       uniqueName: 'sas-news',
     },
     module: {
       rules: [
-        ...Repack.getJsTransformRules(),
+        {
+          test: /\.[cm]?[jt]sx?$/,
+          use: {
+            loader: '@callstack/repack/babel-swc-loader',
+            parallel: true,
+            options: {},
+          },
+          type: 'javascript/auto',
+        },
         ...Repack.getAssetTransformRules({inline: true}),
       ],
     },
@@ -59,4 +60,4 @@ export default env => {
       }),
     ],
   };
-};
+});

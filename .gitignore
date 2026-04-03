@@ -70,3 +70,6 @@ code-signing.pem.pub
 
 # build artifcats
 build/
+
+# Module Federation generated types
+@mf-types/
