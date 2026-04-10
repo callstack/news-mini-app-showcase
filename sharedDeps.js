@@ -4,7 +4,7 @@ const getSharedDependencies = ({eager = true}) => {
   const shared = Object.entries(dependencies)
     .filter(([dep]) => dep !== '@module-federation/enhanced')
     .map(([dep, version]) => {
-      return [dep, {singleton: true, eager, requiredVersion: version}];
+      return [dep, {singleton: true, eager, version, requiredVersion: version}];
     });
   return Object.fromEntries(shared);
 };

@@ -1,18 +1,8 @@
-resolve_react_native = <<-JS
-    require.resolve("react-native", {paths: ["#{Dir.pwd}"]})
-JS
-
-react_native_path = File.dirname(Pod::Executable.execute_command('node', ['-p', resolve_react_native]).strip)
-react_native_pods_path = react_native_path + '/scripts/react_native_pods.rb'
-
-resolve_cli_native_modules_script = <<-JS
-    require.resolve("@react-native-community/cli-platform-ios/native_modules.rb", {paths: ["#{react_native_path}"]})
-JS
-
-cli_native_modules_script_path = Pod::Executable.execute_command('node', ['-p', resolve_cli_native_modules_script]).strip
-
-require react_native_pods_path
-require cli_native_modules_script_path
+require Pod::Executable.execute_command('node', ['-p',
+  'require.resolve(
+    "react-native/scripts/react_native_pods.rb",
+    {paths: [process.argv[1]]},
+  )', __dir__]).strip
 
 platform :ios, min_ios_version_supported
 prepare_react_native_project!
@@ -24,28 +14,22 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
-pod 'SDWebImage', :modular_headers => true
-pod 'SDWebImageSVGCoder', :modular_headers => true
-
 target 'news' do
   config = use_native_modules!
 
-  # Flags change depending on the env values.
-  flags = get_default_flags()
-
   use_react_native!(
-    :path => config[:reactNativePath],
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
+
+  pod 'SDWebImage', :modular_headers => true
+  pod 'SDWebImageSVGCoder', :modular_headers => true
 
   post_install do |installer|
     react_native_post_install(
       installer,
       config[:reactNativePath],
-      # Set `mac_catalyst_enabled` to `true` in order to apply patches
-      # necessary for Mac Catalyst builds
       :mac_catalyst_enabled => false
+      # :ccache_enabled => true
     )
-    # __apply_Xcode_12_5_M1_post_install_workaround(installer)
   end
 end
